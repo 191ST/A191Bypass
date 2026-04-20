@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>FREE SCRIPT 191</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+/* BACKGROUND GLOW */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 200%;
+    top: -100%;
+    left: 0;
+    background: linear-gradient(to bottom, #000, #1a1a1a, #2a2a2a, #000);
+    animation: flow 10s linear infinite;
+    z-index: -2;
+}
+
+@keyframes flow {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(50%); }
+}
+
+/* MOVING GIF */
+.moving-bg {
+    position: fixed;
+    bottom: 20px;
+    right: -300px;
+    width: 250px;
+    opacity: 0.4;
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* ANIMASI GERAK */
+@keyframes moveLeft {
+    from { right: -300px; }
+    to { right: 110%; }
+}
+
+/* CONTAINER */
+.container {
+    max-width: 400px;
+    margin: 140px auto;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+h1 {
+    font-size: 28px;
+    letter-spacing: 3px;
+    margin-bottom: 90px;
+}
+
+/* GLITCH */
+.glitch {
+    position: relative;
+    animation: glitchAnim 0.15s infinite;
+}
+
+.glitch::before,
+.glitch::after {
+    content: "FREE SCRIPT 191";
+    position: absolute;
+    left: 0;
+    width: 100%;
+}
+
+.glitch::before {
+    color: red;
+    animation: glitchTop 0.15s infinite;
+}
+
+.glitch::after {
+    color: cyan;
+    animation: glitchBottom 0.15s infinite;
+}
+
+@keyframes glitchAnim {
+    0% { transform: translate(0); }
+    50% { transform: translate(-2px, 2px); }
+    100% { transform: translate(2px, -2px); }
+}
+
+@keyframes glitchTop {
+    0% { transform: translate(2px, -2px); }
+    100% { transform: translate(-2px, 2px); }
+}
+
+@keyframes glitchBottom {
+    0% { transform: translate(-2px, 2px); }
+    100% { transform: translate(2px, -2px); }
+}
+
+/* BUTTON */
+.button {
+    position: relative;
+    overflow: hidden;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 16px;
+    width: 100%;
+    margin: 14px 0;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 14px;
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 15px rgba(255,255,255,0.25);
+}
+
+/* RIPPLE */
+.button span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    background: rgba(255,255,255,0.4);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* DROPDOWN */
+.dropdown {
+    max-height: 0;
+    overflow: hidden;
+    background: rgba(0,0,0,0.6);
+    border-radius: 12px;
+    font-size: 13px;
+    word-break: break-all;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.4s ease;
+    padding: 0 12px;
+}
+
+.dropdown.show {
+    max-height: 300px;
+    opacity: 1;
+    transform: translateY(0);
+    padding: 12px;
+}
+
+/* COPY */
+.copy {
+    margin-top: 10px;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #333;
+    color: white;
+    font-size: 12px;
+}
+
+.copy:hover {
+    background: #555;
+}
+
+/* QRIS */
+.qris-drop {
+    width: 100%;
+    max-width: 250px;
+    border-radius: 12px;
+    margin: 10px auto;
+    display: block;
+    box-shadow: 0 0 20px rgba(255,255,255,0.2);
+    cursor: pointer;
+}
+</style>
+</head>
+
+<body>
+
+<!-- GIF BACKGROUND -->
+<img src="https://i.imgur.com/9BMZmmB.gif" class="moving-bg" id="bgGif">
+
+<div class="container">
+    <h1 id="title">FREE SCRIPT 191</h1>
+
+    <button class="button" onclick="toggle(event,'d1')">⚡ SCRIPT FPS ELIXIR</button>
+    <div id="d1" class="dropdown">
+        <div id="t1">https://raw.githubusercontent.com/191ST/FPSELIXIRKENABOBOL.lua/refs/heads/main/elixir60sfps.lua</div>
+        <button class="copy" onclick="copyText('t1')">Copy</button>
+    </div>
+
+    <button class="button" onclick="toggle(event,'d2')">🔥 SCRIPT FPS 191</button>
+    <div id="d2" class="dropdown">
+        <div id="t2">loadstring(game:HttpGet("https://raw.githubusercontent.com/191ST/fpsboost191.V1/refs/heads/main/fpsboost.lua"))()</div>
+        <button class="copy" onclick="copyText('t2')">Copy</button>
+    </div>
+
+    <button class="button" onclick="toggle(event,'d3')">💸 SCRIPT AUTO MS FREE</button>
+    <div id="d3" class="dropdown">
+        <div id="t3">https://raw.githubusercontent.com/191ST/191FREEMS/refs/heads/main/191FREESCRIPT.lua"))()</div>
+        <button class="copy" onclick="copyText('t3')">Copy</button>
+    </div>
+
+    <button class="button" onclick="toggle(event,'d4')">🖥️ STRETCH SCREEN SCRIPT</button>
+    <div id="d4" class="dropdown">
+        <div id="t4">loadstring(game:HttpGet("https://raw.githubusercontent.com/191ST/STRETCHSCREEN191/refs/heads/main/191STRETCH.lua"))()</div>
+        <button class="copy" onclick="copyText('t4')">Copy</button>
+    </div>
+
+    <button class="button" onclick="toggle(event,'d5')">💳 QRIS ALLPAYMENT</button>
+    <div id="d5" class="dropdown">
+        <img src="https://i.imgur.com/BBd59bI.jpeg" class="qris-drop" onclick="zoom(this)">
+        <p style="font-size:12px;opacity:0.6;">Scan untuk bayar 💸</p>
+    </div>
+
+</div>
+
+<script>
+// dropdown + ripple
+function toggle(e, id) {
+    let circle = document.createElement("span");
+    let rect = e.target.getBoundingClientRect();
+    circle.style.left = (e.clientX - rect.left) + "px";
+    circle.style.top = (e.clientY - rect.top) + "px";
+    e.target.appendChild(circle);
+    setTimeout(() => circle.remove(), 600);
+
+    document.querySelectorAll(".dropdown").forEach(d => {
+        if (d.id !== id) d.classList.remove("show");
+    });
+
+    document.getElementById(id).classList.toggle("show");
+}
+
+// copy
+function copyText(id) {
+    let text = document.getElementById(id).innerText;
+    navigator.clipboard.writeText(text);
+    alert("Copied!");
+}
+
+// zoom QR
+function zoom(img){
+    let w = window.open("");
+    w.document.write("<img src='"+img.src+"' style='width:100%'>");
+}
+
+// glitch tiap 1 detik
+setInterval(() => {
+    let title = document.getElementById("title");
+    title.classList.add("glitch");
+    setTimeout(() => {
+        title.classList.remove("glitch");
+    }, 200);
+}, 1000);
+
+// GIF lewat tiap 1 menit
+setInterval(() => {
+    let gif = document.getElementById("bgGif");
+    gif.style.animation = "moveLeft 8s linear";
+
+    setTimeout(() => {
+        gif.style.animation = "none";
+    }, 8000);
+}, 60000);
+</script>
+
+</body>
+</html>
